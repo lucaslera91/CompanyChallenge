@@ -1,0 +1,19 @@
+* {
+    background-color: rgb(48, 90, 90);
+    color: rgb(226, 219, 219);
+    margin: 0;
+    top:0;
+} 
+
+input{
+    white-space: nowrap;
+    min-width: 30px;
+}
+#container{
+    margin-left:0;margin-right:0;
+    flex-wrap: wrap;
+}
+#createCompanyButton{
+        white-space: nowrap;
+       
+}

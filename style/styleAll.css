@@ -1,0 +1,19 @@
+* {
+  background-color: #305a5a;
+  color: #e2dbdb;
+  margin: 0;
+  top: 0; }
+
+input {
+  white-space: nowrap;
+  min-width: 30px; }
+
+#container {
+  margin-left: 0;
+  margin-right: 0;
+  flex-wrap: wrap; }
+
+#createCompanyButton {
+  white-space: nowrap; }
+
+/*# sourceMappingURL=styleAll.css.map */

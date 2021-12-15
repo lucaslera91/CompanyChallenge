@@ -1,0 +1,101 @@
+Back:
+
+Install dependencies:
+
+    npm i
+
+Input data .env file for database
+
+Los end point los podes testear con postman, front end trabaja con los endpoint igualmente
+
+postman Test:
+
+Listo - POST /companies  (crea una empresa nueva)
+            - {
+                "name": "Ejemeplo SRL",
+                "country": "Argentina"
+            }
+Listo - PUT /companies/{company_id}  (edita una empresa)
+            {
+                "name": "Ejemeplo Modificado SRL",
+                "country": "Argentina"
+            }
+
+Listo - GET /companies (devuelve una lista de todas las empresas)
+
+Listo - GET /companies/{company_id}  (devuelve una empresa)
+        - elegir id que exista
+
+Listo - DELETE /companies/{company_id}  (borra una empresa)
+        - elegir id que exista
+
+
+Listo - POST /displays  (crea una pantalla nueva)
+            -se debe crear con el nombre de una empresa que exista en el front o un numero id que exista en Postman
+            {
+                "name":'Downtown Office',
+                "company_id": 2, 
+                "latitude": 33.33,
+                "longitude": 44.55,
+                "type": 'INDOOR',
+                "price" : 500.50
+            }
+
+Listo - PUT /displays/{display_id}  (edita una pantalla)
+            {
+                "name":"Downtown Office",
+                "company_id": 2, 
+                "latitude": 33.33,
+                "longitude": 44.55,
+                "type": "INDOOR",
+                "price" : 500.50
+            }
+
+Listo - GET /displays  (devuelve una lista de todas las pantallas)
+
+Listo - GET /displays/{display_id}  (devuelve una pantalla)
+        - elegir id que exista
+
+Listo - DELETE /displays/{display_id}  (borra una pantalla)
+        - elegir id que exista
+
+Listo - GET /companies/{company_id}/displays (devuelve una lista de todas las pantallas de una empresa)
+        - elegir id que exista
+--------------------------
+Front:
+
+En el front es medianamente intuitivo, lo arme responsive. Una sola pantalla par que sea mas simple.
+
+Listo - POST /companies  (crea una empresa nueva)
+    -Clickear boton de crear empresa y se crea
+Listo - PUT /companies/{company_id}  (edita una empresa)
+    - para esto debemos busar la empresa y luego 'Edit'
+Listo - GET /companies  (devuelve una lista de todas las empresas)
+    - si apretamos search vacio busca todas las empresas
+Listo - GET /companies/{company_id}  (devuelve una empresa)
+    - si colocamos el nomebre de la empresa (correcto y case sensitive) busca la emresa
+    - aca se puede tirar el listado completo y buscar por nombre
+    - ademas tiene auto completar que te va a sugerir opciones
+Listo - DELETE /companies/{company_id}  (borra una empresa)
+    -si se busca el elemento se puede eliminar
+
+Listo - POST /displays  (crea una pantalla nueva)
+    - creamos igual que company
+
+Listo - PUT /displays/{display_id}  (edita una pantalla)
+    - modificamos igual que company
+
+Listo - GET /displays  (devuelve una lista de todas las pantallas)
+    - aca hay un campo de country que esta vacio por default - busca todos los paises. 
+    - si colocas pais, hace la busqueda especifica al pais
+
+Listo - GET /displays/{display_id}  (devuelve una pantalla)
+    -se busca igual que company
+
+Listo - DELETE /displays/{display_id}  (borra una pantalla)
+    - se elimina igual que company
+
+Listo - GET /companies/{company_id}/displays (devuelve una lista de todas las pantallas de una empresa)
+    -cuando buscamos la lista de empresas, podemos decidir ver sus pantallas con un boton
+
+
