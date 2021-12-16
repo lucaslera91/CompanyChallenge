@@ -83,18 +83,6 @@ try{
     console.log('error en join search')
 }
 }
-   
-        
-        
-        
-        
-    //     include:
-    //     [{
-    //     model: Company,
-    //     required: true,
-    //     where: {id: {in county: country}}
-    //    }]
-
 
 // Crear - Post
  // param = {

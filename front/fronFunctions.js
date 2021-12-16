@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     makeArrays()
 });
 //Validate input
-// validamos datos de
+// validamos datos de registro.. esta largo porque estaba teniendo problemas con cada instancia..
 function validate(name, company_id, latitude, longitude, type, price){
 try{
     let aux = true

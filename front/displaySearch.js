@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Create display Form
 function addCreateDisplayForm(){
-   
+   // desplegamos el formulario de creacion
     displayRegisterFormInsert.innerHTML = 
     `<div id="createDisplayForm" class="col-12 col-sm-6">
     <input id="displayNameCreate" class="form-control my-2" type="search" placeholder="Name" aria-label="Search">
@@ -35,7 +35,7 @@ function addCreateDisplayForm(){
 const submitDisplayBtn = document.getElementById('submitCreateDisplay');
 submitDisplayBtn.addEventListener('click', createDisplay)
 }
-// exit form create display
+// cerramos del formulario
 function extitFormDisplay(){
     displayRegisterFormInsert.innerHTML = `
         <div id="createDisplayButton" onclick="addCreateDisplayForm()"class="col-12 col-sm-12 d-flex justify-content-center p-3">
@@ -56,7 +56,7 @@ async function createDisplay(e){
         const price = document.getElementById('displayPriceCreate')
     
         console.log(company_id[0])
-        
+        //validamos valores y creamos 
         if(validate(name.value, company_id[0],latitude.value, longitude.value, type.value, price.value)){
             console.log(validate(name.value, company_id[0],latitude.value, longitude.value, type.value, price.value))
             let create = await myFetch('/displays', 'POST', {
@@ -88,7 +88,7 @@ async function createDisplay(e){
 // mostramos todos los valores de display
 async function viewDisplays (e){
     e.preventDefault();
-    //if campo country '' then esto:
+    //if campo country '' then obtenemos todos los valores
     if(countrySearchInput.value == ''){
         if(displaySearchInput.value == ""){
             let list = await myFetch('/displays', 'GET');
@@ -98,6 +98,7 @@ async function viewDisplays (e){
                 const {id, name, company_id, latitude, longitude, type, price} = element
                 listDisplay.innerHTML += `<div class='d-flex align-items-center'> ID: ${id}, name: ${name}, company_id: ${company_id}, latitude:${latitude}, longitude: ${longitude}, type: ${type}, price: $${price}<button class="btn btn-outline-light mx-3" onclick="editDisplayBtn(this.id)" id=${id.toString()}>Edit</button><button class="btn btn-outline-light mx-3" onclick="deletedisplay(this.id)" id="del${id}">Delete</button></div><div id=id${id}></div><br>`;
             });
+            //si el campo tiene un valor se vusca individualmente
         } else{
             listDisplay.innerHTML = 'Display'
             if (await validateIfInList(displaySearchInput.value, 'display')){
@@ -135,6 +136,7 @@ async function editDisplayBtn(id){
     const edit = document.getElementById('id'+id);
     const editBtn = document.getElementById(id)
     editBtn.style.visibility = 'hidden'
+   //desplegamos el campo para editar
     edit.innerHTML += 
     `<div id="editDisplayForm" class="col-12 col-sm-6">
     <input id="displayNameCreate" class="form-control my-2" type="search" placeholder="Name" aria-label="Search">
@@ -151,7 +153,7 @@ async function editDisplayBtn(id){
 const submitDisplayBtn = document.getElementById(`submitEdit${id}`);
 }
     
-//exit edit form
+//salimos del formulario de edicion
 function exitEditDisplayForm(id){
     
     const aux = "id"+id
@@ -164,7 +166,7 @@ function exitEditDisplayForm(id){
     edit.innerHTML = ''
 }
 
-// edit genera un form para poder cambiar datos
+// edit genera un form para poder cambiar datos y se valida
 async function editDisplay(idName){
     const id = idName.slice(10)
     console.log(id)
