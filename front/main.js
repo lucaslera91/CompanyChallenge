@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// Add a create form
+// Add a create form de compania
 function addCreateCompanyForm(){
     companyRegisterFormInsert.innerHTML = 
     `<div id="createCompanyForm" class="col-12 col-sm-6">
@@ -24,7 +24,7 @@ function addCreateCompanyForm(){
     const exitBtn = document.getElementById('createCompanyForm')
 }
 
-// Exit form
+// Exit form compania
 function exitForm(){
     companyRegisterFormInsert.innerHTML = `<div id="createCompanyButton" class="col-12 col-sm-12 d-flex justify-content-center p-3">
                                                  <button onclick='addCreateCompanyForm()' class="btn btn-outline-success bg-light my-2 my-sm-0 text-dark" type="submit">Create new company</button>
@@ -48,6 +48,7 @@ async function viewAllCompanies(e){
                                                 </div><div id=id${id}></div><br>`;
         });
     } else{
+        //si hay un valor en el campo busca una sola
         listCompanyInsert.innerHTML = 'Companies'
         if (await validateIfInList(inputSearchCompany.value, 'companies')){
             console.log(validateIfInList(inputSearchCompany.value, 'companies'))
