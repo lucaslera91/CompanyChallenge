@@ -6,6 +6,8 @@ Install dependencies:
 
 Input data .env file for database
 
+Importar challange.sql a tu base de datos (o podes generar la tuya nueva)
+
 Los end point los podes testear con postman, front end trabaja con los endpoint igualmente
 
 postman Test:
